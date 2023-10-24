@@ -71,7 +71,7 @@ The number of students who did not take the final exam is  60
 
 ```{.r .cell-code}
 ggplot(grades, aes(x = Exam)) +
-  geom_bar(fill="lightblue")+
+  geom_bar()+
   xlab("Grade") +
   ylab("Number of the students")
 ```
@@ -120,5 +120,22 @@ knitr::kable(T2)
 |grp_7  |     31|
 |grp_8  |     30|
 |grp_9  |     29|
+:::
+:::
+
+
+## Exercise 6
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(grades, aes(x = Group)) +
+  geom_bar()+
+  xlab("Group") +
+  ylab("Number of the students")
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-7-1.png){width=672}
 :::
 :::

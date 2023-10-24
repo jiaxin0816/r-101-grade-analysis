@@ -44,7 +44,7 @@ The number of students who did not take the final exam is  `r N`
 ## Exercise 4
 ```{r message=FALSE,warning=FALSE}
 ggplot(grades, aes(x = Exam)) +
-  geom_bar(fill="lightblue")+
+  geom_bar()+
   xlab("Grade") +
   ylab("Number of the students")
 ```
@@ -57,4 +57,11 @@ T2 <- grades |>
 knitr::kable(T2)
 ```
 
+## Exercise 6
+```{r message=FALSE,warning=FALSE}
+ggplot(grades, aes(x = Group)) +
+  geom_bar()+
+  xlab("Group") +
+  ylab("Number of the students")
+```
 
