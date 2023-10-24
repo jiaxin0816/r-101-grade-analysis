@@ -6,8 +6,10 @@ execute:
   keep-md: true
 ---
 
-```{r}
-#| message: false
+
+::: {.cell}
+
+```{.r .cell-code}
 here::i_am("r-101-grade-analysis.Rproj")
 library(here)
 library(vroom) ## or readr
@@ -15,17 +17,26 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 ```
+:::
+
 
 ## Exercise 1
 
-```{r}
-#| message: false
+
+::: {.cell}
+
+```{.r .cell-code}
 grades <- vroom(here("grades.csv"))
 ```
+:::
+
 
 ##Exercise2
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 T1 <- grades |>
   summarise(min_Grade=min(Exam,na.rm=TRUE),
             max_Grade=max(Exam,na.rm=TRUE),
@@ -34,9 +45,22 @@ T1 <- grades |>
 knitr::kable(T1)
 ```
 
+::: {.cell-output-display}
+| min_Grade| max_Grade| mean_Grade| median_Gradem|
+|---------:|---------:|----------:|-------------:|
+|         0|        20|   7.148729|           6.5|
+:::
+:::
+
+
 ## Exercise 3
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 N <- sum(is.na(grades$Exam))
 ```
-The number of students who did not take the final exam is  `r N`
+:::
+
+The number of students who did not take the final exam is  60
