@@ -2,25 +2,24 @@
 title: "Exercise"
 author: "Jiaxin Shen"
 format: html
+execute: 
+  keep-md: true
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
 ```{r}
-1 + 1
+#| message: false
+here::i_am("r-101-grade-analysis.Rproj")
+library(here)
+library(vroom) ## or readr
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 ```
 
-You can add options to executable code like this 
+## Exercise 1
 
 ```{r}
-#| echo: false
-2 * 2
+#| message: false
+clients <- vroom(here("grades.csv"))
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
