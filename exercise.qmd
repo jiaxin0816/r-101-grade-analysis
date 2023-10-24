@@ -40,3 +40,16 @@ knitr::kable(T1)
 N <- sum(is.na(grades$Exam))
 ```
 The number of students who did not take the final exam is  `r N`
+
+## Exercise 4
+```{r message=FALSE,warning=FALSE}
+ggplot(grades, aes(x = Exam)) +
+  geom_bar(fill="lightblue")+
+  xlab("Grade") +
+  ylab("Number of the students")
+```
+
+
+
+
+

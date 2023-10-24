@@ -64,3 +64,19 @@ N <- sum(is.na(grades$Exam))
 :::
 
 The number of students who did not take the final exam is  60
+
+## Exercise 4
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(grades, aes(x = Exam)) +
+  geom_bar(fill="lightblue")+
+  xlab("Grade") +
+  ylab("Number of the students")
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-5-1.png){width=672}
+:::
+:::
