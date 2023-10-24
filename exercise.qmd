@@ -65,3 +65,17 @@ ggplot(grades, aes(x = Group)) +
   ylab("Number of the students")
 ```
 
+## Exercise 7
+```{r message=FALSE,warning=FALSE}
+
+  facet_wrap(~Group,scales = "free_x")+
+  xlab("Group") +
+  ylab("Number of the students")
+```
+
+
+
+
+
+
+
