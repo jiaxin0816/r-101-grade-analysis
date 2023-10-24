@@ -23,7 +23,7 @@ library(ggplot2)
 grades <- vroom(here("grades.csv"))
 ```
 
-##Exercise2
+## Exercise2
 
 ```{r}
 T1 <- grades |>
@@ -49,7 +49,12 @@ ggplot(grades, aes(x = Exam)) +
   ylab("Number of the students")
 ```
 
-
-
+## Exercise 5
+```{r}
+T2 <- grades |>
+  group_by(Group) |>
+  summarise(number=n())
+knitr::kable(T2)
+```
 
 

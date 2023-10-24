@@ -31,7 +31,7 @@ grades <- vroom(here("grades.csv"))
 :::
 
 
-##Exercise2
+## Exercise2
 
 
 ::: {.cell}
@@ -78,5 +78,47 @@ ggplot(grades, aes(x = Exam)) +
 
 ::: {.cell-output-display}
 ![](exercise_files/figure-html/unnamed-chunk-5-1.png){width=672}
+:::
+:::
+
+
+## Exercise 5
+
+::: {.cell}
+
+```{.r .cell-code}
+T2 <- grades |>
+  group_by(Group) |>
+  summarise(number=n())
+knitr::kable(T2)
+```
+
+::: {.cell-output-display}
+|Group  | number|
+|:------|------:|
+|grp_1  |     29|
+|grp_10 |     23|
+|grp_11 |     25|
+|grp_12 |     33|
+|grp_13 |     29|
+|grp_14 |     32|
+|grp_15 |     34|
+|grp_16 |     33|
+|grp_17 |     35|
+|grp_18 |     36|
+|grp_19 |     29|
+|grp_2  |     23|
+|grp_20 |     33|
+|grp_21 |     36|
+|grp_22 |     27|
+|grp_23 |     33|
+|grp_24 |     35|
+|grp_3  |     32|
+|grp_4  |     32|
+|grp_5  |     27|
+|grp_6  |     23|
+|grp_7  |     31|
+|grp_8  |     30|
+|grp_9  |     29|
 :::
 :::
