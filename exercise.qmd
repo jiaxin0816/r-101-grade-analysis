@@ -20,6 +20,17 @@ library(ggplot2)
 
 ```{r}
 #| message: false
-clients <- vroom(here("grades.csv"))
+grades <- vroom(here("grades.csv"))
+```
+
+##Exercise2
+
+```{r}
+T1 <- grades |>
+  summarise(min_Grade=min(Exam,na.rm=TRUE),
+            max_Grade=max(Exam,na.rm=TRUE),
+            mean_Grade=mean(Exam,na.rm=TRUE),
+            median_Gradem=median(Exam,na.rm=TRUE))
+knitr::kable(T1)
 ```
 
