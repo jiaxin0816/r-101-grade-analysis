@@ -106,3 +106,11 @@ options(digits=3)
 T4 <- grades |>
   pivot_longer(!Id & !Group,names_to = "name", values_to = "Value")
 ```
+
+## Exercise 11
+```{r}
+T5 <- T4 |> 
+    group_by(`Id`) |>
+    summarize(missing_grades = sum(is.na(Value)))
+knitr::kable(T5)
+```
