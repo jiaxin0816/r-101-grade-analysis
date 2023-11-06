@@ -122,3 +122,12 @@ ggplot(T5, aes(x = Id, y = missing_grades)) +
   xlab("Id")+
   ylab("Missing grades")
 ```
+
+## Exercise 13
+```{r}
+T6 <- T4 |> 
+    filter(str_starts(name,"Exam")) |>
+    group_by(Group) |>  
+    summarise(n = sum(is.na(Value)))
+knitr::kable(T6)
+```

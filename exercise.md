@@ -1009,3 +1009,46 @@ ggplot(T5, aes(x = Id, y = missing_grades)) +
 ![](exercise_files/figure-html/unnamed-chunk-14-1.png){width=672}
 :::
 :::
+
+
+## Exercise 13
+
+::: {.cell}
+
+```{.r .cell-code}
+T6 <- T4 |> 
+    filter(str_starts(name,"Exam")) |>
+    group_by(Group) |>  
+    summarise(n = sum(is.na(Value)))
+knitr::kable(T6)
+```
+
+::: {.cell-output-display}
+|Group  |  n|
+|:------|--:|
+|grp_1  |  3|
+|grp_10 |  7|
+|grp_11 |  6|
+|grp_12 |  1|
+|grp_13 |  1|
+|grp_14 |  1|
+|grp_15 |  2|
+|grp_16 |  0|
+|grp_17 |  5|
+|grp_18 |  3|
+|grp_19 |  1|
+|grp_2  |  5|
+|grp_20 |  0|
+|grp_21 |  0|
+|grp_22 |  0|
+|grp_23 |  2|
+|grp_24 |  1|
+|grp_3  |  2|
+|grp_4  |  5|
+|grp_5  |  1|
+|grp_6  |  3|
+|grp_7  |  4|
+|grp_8  |  2|
+|grp_9  |  5|
+:::
+:::
