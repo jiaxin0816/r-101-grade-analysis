@@ -150,3 +150,12 @@ ggplot(T8, aes(x = Id, y = Exam)) +
   xlab("Id")+
   ylab("Exam Grade")
 ```
+
+## Exercise 16
+```{r}
+T9 <- T4 |>
+  filter(str_starts(name,"MCQ_")) |>
+  group_by(`Id`) |>
+  summarize(Missed = isTRUE(sum(is.na(Value))>=1))
+knitr::kable(T9)
+```
