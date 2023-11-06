@@ -159,3 +159,14 @@ T9 <- T4 |>
   summarize(Missed = isTRUE(sum(is.na(Value))>=1))
 knitr::kable(T9)
 ```
+
+## Exercise 17
+```{r}
+T10 <- inner_join(T9,grades,by="Id") |>
+  count(Group, Missed) |>
+  group_by(Group) |>
+  mutate(P_misssed=n/sum(n)) |>
+  ungroup() |>
+  filter(Missed=="TRUE") |>
+  select(Group,P_misssed)
+```

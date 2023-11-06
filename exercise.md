@@ -2567,3 +2567,19 @@ knitr::kable(T9)
 | 729|TRUE   |
 :::
 :::
+
+
+## Exercise 17
+
+::: {.cell}
+
+```{.r .cell-code}
+T10 <- inner_join(T9,grades,by="Id") |>
+  count(Group, Missed) |>
+  group_by(Group) |>
+  mutate(P_misssed=n/sum(n)) |>
+  ungroup() |>
+  filter(Missed=="TRUE") |>
+  select(Group,P_misssed)
+```
+:::
