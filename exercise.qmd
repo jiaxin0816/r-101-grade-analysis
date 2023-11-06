@@ -84,7 +84,13 @@ ggplot(grades, aes(x = Exam, color=Group)) +
   ylab("Number of students")
 ```
 
-
+## Exercise 8
+```{r}
+T3 <- grades |> 
+    group_by(`Group`) |>
+    summarize(number = sum(is.na(Exam)))
+knitr::kable(T3)
+```
 
 
 
