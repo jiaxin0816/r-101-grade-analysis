@@ -2583,3 +2583,28 @@ T10 <- inner_join(T9,grades,by="Id") |>
   select(Group,P_misssed)
 ```
 :::
+
+
+## Exercise 18
+
+::: {.cell}
+
+```{.r .cell-code}
+T11 <- grades |>
+  group_by(Group) |>
+  summarise(Average_Grade=mean(Exam,na.rm=TRUE)) |>
+  inner_join(T10,by="Group")
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(T11, aes(x=P_misssed,y=Average_Grade)) +
+geom_hex()
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-21-1.png){width=672}
+:::
+:::

@@ -170,3 +170,16 @@ T10 <- inner_join(T9,grades,by="Id") |>
   filter(Missed=="TRUE") |>
   select(Group,P_misssed)
 ```
+
+## Exercise 18
+```{r}
+T11 <- grades |>
+  group_by(Group) |>
+  summarise(Average_Grade=mean(Exam,na.rm=TRUE)) |>
+  inner_join(T10,by="Group")
+```
+
+```{r}
+ggplot(T11, aes(x=P_misssed,y=Average_Grade)) +
+geom_hex()
+```
