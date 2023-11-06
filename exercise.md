@@ -233,3 +233,15 @@ ggplot(T3, aes(x = Group, y = number)) +
 ![](exercise_files/figure-html/unnamed-chunk-11-1.png){width=672}
 :::
 :::
+
+
+## Exercise 10
+
+::: {.cell}
+
+```{.r .cell-code}
+options(digits=3)
+T4 <- grades |>
+  pivot_longer(!Id & !Group,names_to = "name", values_to = "Value")
+```
+:::

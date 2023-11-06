@@ -100,3 +100,9 @@ ggplot(T3, aes(x = Group, y = number)) +
   ylab("Missed Exam")
 ```
 
+## Exercise 10
+```{r}
+options(digits=3)
+T4 <- grades |>
+  pivot_longer(!Id & !Group,names_to = "name", values_to = "Value")
+```

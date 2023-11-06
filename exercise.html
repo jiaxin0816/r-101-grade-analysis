@@ -448,6 +448,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="exercise-10" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-10">Exercise 10</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">digits=</span><span class="dv">3</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>T4 <span class="ot">&lt;-</span> grades <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>Id <span class="sc">&amp;</span> <span class="sc">!</span>Group,<span class="at">names_to =</span> <span class="st">"name"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 
 </main>
 <!-- /main column -->
