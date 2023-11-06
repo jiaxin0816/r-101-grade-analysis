@@ -131,3 +131,12 @@ T6 <- T4 |>
     summarise(n = sum(is.na(Value)))
 knitr::kable(T6)
 ```
+
+## Exercise 14
+```{r}
+T7 <- T4 |> 
+    filter(str_starts(name,"Online_MCQ_")) |>
+    group_by(`Id`) |>
+    summarize(missing_online_grades = sum(is.na(Value)))
+knitr::kable(T7)
+```
