@@ -1800,3 +1800,22 @@ knitr::kable(T7)
 | 729|                     3|
 :::
 :::
+
+
+## Exercise 15
+
+::: {.cell}
+
+```{.r .cell-code}
+T8 <- inner_join(T7,grades,by="Id")
+ggplot(T8, aes(x = Id, y = Exam)) +
+  geom_col()+
+  facet_wrap(vars(missing_online_grades),scales = "free_x")+
+  xlab("Id")+
+  ylab("Exam Grade")
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-17-1.png){width=672}
+:::
+:::

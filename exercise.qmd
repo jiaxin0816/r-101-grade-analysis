@@ -140,3 +140,13 @@ T7 <- T4 |>
     summarize(missing_online_grades = sum(is.na(Value)))
 knitr::kable(T7)
 ```
+
+## Exercise 15
+```{r message=FALSE,warning=FALSE}
+T8 <- inner_join(T7,grades,by="Id")
+ggplot(T8, aes(x = Id, y = Exam)) +
+  geom_col()+
+  facet_wrap(vars(missing_online_grades),scales = "free_x")+
+  xlab("Id")+
+  ylab("Exam Grade")
+```
