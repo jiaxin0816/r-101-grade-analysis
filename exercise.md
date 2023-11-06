@@ -216,3 +216,20 @@ knitr::kable(T3)
 |grp_9  |      5|
 :::
 :::
+
+
+## Exercise 9
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(T3, aes(x = Group, y = number)) +
+  geom_col()+
+  xlab("Group")+
+  ylab("Missed Exam")
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-11-1.png){width=672}
+:::
+:::

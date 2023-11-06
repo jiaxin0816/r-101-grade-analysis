@@ -92,5 +92,11 @@ T3 <- grades |>
 knitr::kable(T3)
 ```
 
-
+## Exercise 9
+```{r message=FALSE,warning=FALSE}
+ggplot(T3, aes(x = Group, y = number)) +
+  geom_col()+
+  xlab("Group")+
+  ylab("Missed Exam")
+```
 
