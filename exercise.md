@@ -16,6 +16,7 @@ library(vroom) ## or readr
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(stringr)
 ```
 :::
 
@@ -41,14 +42,14 @@ T1 <- grades |>
   summarise(min_Grade=min(Exam,na.rm=TRUE),
             max_Grade=max(Exam,na.rm=TRUE),
             mean_Grade=mean(Exam,na.rm=TRUE),
-            median_Gradem=median(Exam,na.rm=TRUE))
+            median_Grade=median(Exam,na.rm=TRUE))
 knitr::kable(T1)
 ```
 
 ::: {.cell-output-display}
-| min_Grade| max_Grade| mean_Grade| median_Gradem|
-|---------:|---------:|----------:|-------------:|
-|         0|        20|   7.148729|           6.5|
+| min_Grade| max_Grade| mean_Grade| median_Grade|
+|---------:|---------:|----------:|------------:|
+|         0|        20|   7.148729|          6.5|
 :::
 :::
 
@@ -63,7 +64,7 @@ N <- sum(is.na(grades$Exam))
 ```
 :::
 
-The number of students who did not take the final exam is  60
+The number of students who did not take the final exam is  60.
 
 ## Exercise 4
 
@@ -137,5 +138,39 @@ ggplot(grades, aes(x = Group)) +
 
 ::: {.cell-output-display}
 ![](exercise_files/figure-html/unnamed-chunk-7-1.png){width=672}
+:::
+:::
+
+
+## Exercise 7
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(grades, aes(x = Exam)) +
+  geom_bar()+
+  facet_wrap(vars(Group),scales = "free_x")+
+  scale_x_continuous(breaks = c(0,5,10,15,20))+
+  xlab("Grade")+
+  ylab("Number of students")
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-8-1.png){width=672}
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(grades, aes(x = Exam, color=Group)) +
+  geom_bar()+
+  scale_x_continuous(breaks = c(0,5,10,15,20))+
+  xlab("Grade")+
+  ylab("Number of students")
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-9-1.png){width=672}
 :::
 :::

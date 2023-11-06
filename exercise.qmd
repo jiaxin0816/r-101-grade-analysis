@@ -14,6 +14,7 @@ library(vroom) ## or readr
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(stringr)
 ```
 
 ## Exercise 1
@@ -30,7 +31,7 @@ T1 <- grades |>
   summarise(min_Grade=min(Exam,na.rm=TRUE),
             max_Grade=max(Exam,na.rm=TRUE),
             mean_Grade=mean(Exam,na.rm=TRUE),
-            median_Gradem=median(Exam,na.rm=TRUE))
+            median_Grade=median(Exam,na.rm=TRUE))
 knitr::kable(T1)
 ```
 
@@ -39,7 +40,7 @@ knitr::kable(T1)
 ```{r}
 N <- sum(is.na(grades$Exam))
 ```
-The number of students who did not take the final exam is  `r N`
+The number of students who did not take the final exam is  `r N`.
 
 ## Exercise 4
 ```{r message=FALSE,warning=FALSE}
@@ -67,13 +68,21 @@ ggplot(grades, aes(x = Group)) +
 
 ## Exercise 7
 ```{r message=FALSE,warning=FALSE}
-
-  facet_wrap(~Group,scales = "free_x")+
-  xlab("Group") +
-  ylab("Number of the students")
+ggplot(grades, aes(x = Exam)) +
+  geom_bar()+
+  facet_wrap(vars(Group),scales = "free_x")+
+  scale_x_continuous(breaks = c(0,5,10,15,20))+
+  xlab("Grade")+
+  ylab("Number of students")
 ```
 
-
+```{r message=FALSE,warning=FALSE}
+ggplot(grades, aes(x = Exam, color=Group)) +
+  geom_bar()+
+  scale_x_continuous(breaks = c(0,5,10,15,20))+
+  xlab("Grade")+
+  ylab("Number of students")
+```
 
 
 
