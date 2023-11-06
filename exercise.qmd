@@ -114,3 +114,11 @@ T5 <- T4 |>
     summarize(missing_grades = sum(is.na(Value)))
 knitr::kable(T5)
 ```
+
+## Exercise 12
+```{r}
+ggplot(T5, aes(x = Id, y = missing_grades)) +
+  geom_col()+
+  xlab("Id")+
+  ylab("Missing grades")
+```

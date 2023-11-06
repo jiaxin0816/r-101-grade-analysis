@@ -992,3 +992,20 @@ knitr::kable(T5)
 | 729|              4|
 :::
 :::
+
+
+## Exercise 12
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(T5, aes(x = Id, y = missing_grades)) +
+  geom_col()+
+  xlab("Id")+
+  ylab("Missing grades")
+```
+
+::: {.cell-output-display}
+![](exercise_files/figure-html/unnamed-chunk-14-1.png){width=672}
+:::
+:::
