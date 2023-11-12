@@ -127,7 +127,6 @@ T6 <- T4 |>
     filter(str_starts(name,"Exam")) |>
     group_by(Group) |>  
     summarise(n = sum(is.na(Value)))
-knitr::kable(T6)
 ```
 
 ## Exercise 14
