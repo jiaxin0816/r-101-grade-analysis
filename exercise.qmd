@@ -137,7 +137,6 @@ T7 <- T4 |>
     filter(str_starts(name,"Online_MCQ_")) |>
     group_by(`Id`) |>
     summarize(missing_online_grades = sum(is.na(Value)))
-knitr::kable(T7)
 ```
 
 ## Exercise 15
