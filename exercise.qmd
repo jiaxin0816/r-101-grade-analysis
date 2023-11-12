@@ -89,7 +89,6 @@ ggplot(grades, aes(x = Exam, color=Group)) +
 T3 <- grades |> 
     group_by(`Group`) |>
     summarize(number = sum(is.na(Exam)))
-knitr::kable(T3)
 ```
 
 ## Exercise 9
@@ -155,7 +154,6 @@ T9 <- T4 |>
   filter(str_starts(name,"MCQ_")) |>
   group_by(`Id`) |>
   summarize(Missed = isTRUE(sum(is.na(Value))>=1))
-knitr::kable(T9)
 ```
 
 ## Exercise 17
