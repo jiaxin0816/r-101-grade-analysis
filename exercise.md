@@ -12,7 +12,7 @@ execute:
 ```{.r .cell-code}
 here::i_am("r-101-grade-analysis.Rproj")
 library(here)
-library(vroom) ## or readr
+library(vroom)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -1808,11 +1808,11 @@ knitr::kable(T7)
 
 ```{.r .cell-code}
 T8 <- inner_join(T7,grades,by="Id")
-ggplot(T8, aes(x = Id, y = Exam)) +
-  geom_col()+
-  facet_wrap(vars(missing_online_grades),scales = "free_x")+
-  xlab("Id")+
-  ylab("Exam Grade")
+ggplot(T8, aes(x = Exam)) +
+  geom_bar()+
+  facet_wrap(vars(missing_online_grades), scales = "free_y")+
+  xlab("Exam Grade")+
+  ylab("Number")
 ```
 
 ::: {.cell-output-display}
